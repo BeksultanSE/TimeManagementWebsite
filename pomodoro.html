@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link type="image/png" sizes="100x100" rel="icon"
+    href="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/100/external-time-management-time-management-xnimrodx-blue-xnimrodx-3.png">
+
+  <title>Time Management</title>
+
+
+  <link rel="stylesheet" href="assets/css/ourcss.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-574-mexant.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+  <link type="image/png" sizes="100x100" rel="icon"
+    href="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/100/external-time-management-time-management-xnimrodx-blue-xnimrodx-3.png">
+
+
+  <style>
+    /* General Reset */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body and General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    /* Header Area */
+    .header-area {
+      background-color: transparent;
+      box-shadow: none;
+      transition: background- color 0.3s ease, box-shadow 0.3s ease;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 15px 30px;
+      z-index: 1000;
+    }
+
+    /* Scrolled Navbar */
+    .header-area.scrolled {
+      background-color: #001f3d;
+      /* Navy blue */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    }
+
+    /* Fixed Navbar and Logo on Scroll */
+    .header-area.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 30px;
+      background-color: #001f3d;
+      /* Navy blue */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .main-nav .logo img {
+      width: 100px;
+      /* Default larger logo */
+      transition: width 0.3s ease;
+    }
+
+    /* Smaller Logo when Navbar is Scrolled */
+    .header-area.scrolled .main-nav .logo img,
+    .header-area.fixed .main-nav .logo img {
+      width: 55px;
+      /* Smaller logo */
+    }
+
+    .main-nav .nav {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-top: 0px !important;
+      margin-bottom: 20px !important;
+      padding-left: 0;
+    }
+
+    .main-nav .nav li {
+      margin-right: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .main-nav .nav a {
+
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .main-nav .nav a:hover {
+      color: #3e92cc;
+    }
+
+    .menu-trigger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .menu-trigger span {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    /* Mobile Nav Menu */
+    .nav.active {
+      display: block;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+      padding: 15px;
+      z-index: 1000;
+      /* Ensure sidebar is above content */
+    }
+
+    .nav.active li {
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .main-nav .nav {
+        padding-top: 20px;
+        display: block;
+        flex-direction: column;
+      }
+
+      .menu-trigger {
+        display: block;
+      }
+
+      .main-nav .nav a {
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      /* When menu is active (sidebar open), make logo fixed */
+      .logo {
+        position: fixed;
+        top: 20px;
+        /* Keep some space from the top */
+        left: 20px;
+        /* Align it with the left */
+        z-index: 1001;
+        /* Ensure logo stays above the sidebar */
+      }
+
+      /* Ensure sidebar appears over content */
+      .nav.active {
+        display: flex;
+        position: fixed;
+        /* Make the sidebar fixed */
+        top: 60px;
+        /* Adjust for the height of the fixed header */
+        right: 0;
+        width: 250px;
+        /* Sidebar width */
+        height: 100%;
+        background-color: #333;
+        z-index: 999;
+        /* Make sure sidebar is beneath the logo */
+      }
+
+      .nav.active li {
+        margin-bottom: 15px;
+      }
+    }
+
+    /* Page Heading */
+    .page-heading {
+      background-color: #3e92cc;
+      color: #fff;
+      text-align: center;
+      padding: 200px 0 50px;
+    }
+
+    .page-heading .header-text h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .page-heading .div-dec {
+      width: 60px;
+      height: 5px;
+      background-color: #fff;
+      margin: 10px auto 0;
+    }
+
+
+    *::-webkit-scrollbar {
+      display: none;
+    }
+
+    .board {
+      width: 100%;
+      height: 100vh;
+      overflow: scroll;
+
+      background-image: url(https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+      background-position: center;
+      background-size: cover;
+    }
+
+    /* ---- FORM ---- */
+    #todo-form {
+      padding: 32px 32px 0;
+    }
+
+    #todo-form input {
+      padding: 12px;
+      margin-right: 12px;
+      width: 225px;
+
+      border-radius: 4px;
+      border: none;
+
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+      background: white;
+
+      font-size: 14px;
+      outline: none;
+    }
+
+    #todo-form button {
+      padding: 12px 32px;
+
+      border-radius: 4px;
+      border: none;
+
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+      background: #ffffff;
+      color: black;
+
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* ---- BOARD ---- */
+    .lanes {
+      display: flex;
+      align-items: flex-start;
+      justify-content: start;
+      gap: 16px;
+
+      padding: 24px 32px;
+
+      overflow: scroll;
+      height: 100%;
+    }
+
+    .heading {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .swim-lane {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      background: #f4f4f4;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+
+      padding: 12px;
+      border-radius: 4px;
+      width: 225px;
+      min-height: 120px;
+
+      flex-shrink: 0;
+    }
+
+    .task {
+      background: white;
+      color: black;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+
+      padding: 12px;
+      border-radius: 4px;
+
+      font-size: 16px;
+      cursor: move;
+    }
+
+    .is-dragging {
+      scale: 1.05;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+      background: rgb(50, 50, 50);
+      color: white;
+    }
+
+
+    .container1 {
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .timer {
+      display: inline-block;
+      padding: 10px;
+      width: 600px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 2em;
+      width: 8ch;
+      margin: 20px auto;
+    }
+
+    .button-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .button {
+      background-color: #2e325a;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #f87070;
+    }
+
+    .hidden {
+      display: block;
+    }
+
+    .timer-display {
+      font-size: 5em;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    #buttons {
+      margin-top: 20px;
+    }
+
+    #start,
+    #stop {
+      background-color: #2e325a;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #stop:hover {
+      background-color: tomato;
+    }
+
+    #start:hover {
+      background-color: #219a52;
+    }
+
+    #timer-message {
+      color: white;
+      background-color: tomato;
+      display: none;
+      padding: .5em;
+      font-size: 1em;
+      text-align: center;
+      border-radius: 1em;
+    }
+
+
+
+    /* Other sections as previously defined... */
+  </style>
+</head>
+
+<body>
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/icons8-time-management-100.png" alt="time management logo">
+
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="kanban.html">Kanban Planner</a></li>
+              <li><a href="pomodoro.html" class="active">Pomodoro Timer</a></li>
+              <li><a href="contact-us.html">Contact Us</a></li>
+              <li><a href="contact-us.html">Contact Support</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="header-text">
+            <h2><span style="color: red">Pomodoro</span> Timer</h2>
+            <br>
+            <p style="font-size: 300px; color: white"><i class="fa-regular fa-clock"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="pomodoro">
+    <div id="timer-message">Please select a timer before starting.</div>
+
+    <div class="container1" style="background-image: url('https://i.pinimg.com/736x/2e/51/65/2e5165cb6bd987a49aae51f76fa85bce.jpg');">
+      <div class="timer">
+        <h1>🍅 Pomodoro Timer</h1>
+
+        <div class="button-container">
+          <button class="button" id="pomodoro-session">Pomodoro</button>
+          <button class="button" id="short-break">Short Break</button>
+          <button class="button" id="long-break">Long break</button>
+        </div>
+
+        <div id="pomodoro-timer" class="timer-display" data-duration="25.00">
+          25:00
+        </div>
+
+        <div id="short-timer" class="timer-display" data-duration="5.00">
+          5:00
+        </div>
+
+        <div id="long-timer" class="timer-display" data-duration="10.00">
+          10:00
+        </div>
+
+        <div id="buttons">
+          <button id="start">START</button>
+          <button id="stop">STOP</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners">
+
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2022 Mexant Co., Ltd. All Rights Reserved.
+
+            <br>Designed by <a title="CSS Templates" rel="sponsored" href="https://templatemo.com"
+              target="_blank">TemplateMo</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/swiper.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
+
+    window.onscroll = function () {
+      const navbar = document.querySelector('.header-area');
+      const logo = document.querySelector('.main-nav .logo img');
+
+      if (window.scrollY > 50) {  // Adjust this value as per your design
+        navbar.classList.add('scrolled');
+
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
+
+    var interleaveOffset = 0.5;
+
+    var swiperOptions = {
+      loop: true,
+      speed: 1000,
+      grabCursor: true,
+      watchSlidesProgress: true,
+      mousewheelControl: true,
+      keyboardControl: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      on: {
+        progress: function () {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            var slideProgress = swiper.slides[i].progress;
+            var innerOffset = swiper.width * interleaveOffset;
+            var innerTranslate = slideProgress * innerOffset;
+            swiper.slides[i].querySelector(".slide-inner").style.transform =
+              "translate3d(" + innerTranslate + "px, 0, 0)";
+          }
+        },
+        touchStart: function () {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = "";
+          }
+        },
+        setTransition: function (speed) {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = speed + "ms";
+            swiper.slides[i].querySelector(".slide-inner").style.transition =
+              speed + "ms";
+          }
+        }
+      }
+    };
+
+    var swiper = new Swiper(".swiper-container", swiperOptions);
+
+
+    let pomodoro = document.getElementById("pomodoro-timer");
+    let short = document.getElementById("short-timer");
+    let long = document.getElementById("long-timer");
+    let currentTimer = null;
+
+    function showDefaultTimer() {
+      pomodoro.style.display = "block";
+      short.style.display = "none";
+      long.style.display = "none";
+    }
+
+    showDefaultTimer();
+
+    function hideAll() {
+      let timers = document.querySelectorAll(".timer-display");
+      timers.forEach((timer) => (timer.style.display = "none"));
+    }
+
+    document
+      .getElementById("pomodoro-session")
+      .addEventListener("click", function () {
+        hideAll();
+
+        pomodoro.style.display = "block";
+        currentTimer = pomodoro;
+      });
+    document
+      .getElementById("short-break")
+      .addEventListener("click", function () {
+        hideAll();
+
+        short.style.display = "block";
+        currentTimer = short;
+      });
+    document
+      .getElementById("long-break")
+      .addEventListener("click", function () {
+        hideAll();
+
+        long.style.display = "block";
+        currentTimer = long;
+      });
+
+    let myInterval = null;
+
+
+    function startTimer(timerdisplay) {
+      if (myInterval) {
+        clearInterval(myInterval);
+      }
+
+      timerDuration = timerdisplay
+        .getAttribute("data-duration")
+        .split(":")[0];
+      console.log(timerDuration);
+
+      let durationinmiliseconds = timerDuration * 60 * 1000;
+      let endTimestamp = Date.now() + durationinmiliseconds;
+
+      myInterval = setInterval(function () {
+        const timeRemaining = new Date(endTimestamp - Date.now());
+
+        if (timeRemaining <= 0) {
+          clearInterval(myInterval);
+          timerdisplay.textContent = "00:00";
+          const alarm = new Audio(
+            "https://www.freespecialeffects.co.uk/soundfx/scifi/electronic.wav"
+          );
+          alarm.play();
+        } else {
+          const minutes = Math.floor(timeRemaining / 60000);
+          const seconds = ((timeRemaining % 60000) / 1000).toFixed(0);
+          const formattedTime = `${minutes}:${seconds
+            .toString()
+            .padStart(2, "0")}`;
+          console.log(formattedTime);
+          timerdisplay.textContent = formattedTime;
+        }
+      }, 1000);
+    }
+
+    document.getElementById("start").addEventListener("click", function () {
+      if (currentTimer) {
+        startTimer(currentTimer);
+        document.getElementById("timer-message").style.display = "none";
+      } else {
+        document.getElementById("timer-message").style.display = "block";
+      }
+    });
+
+    document.getElementById("stop").addEventListener("click", function () {
+      if (currentTimer) {
+        clearInterval(myInterval);
+      }
+    });
+  </script>
+
+</body>
+
+</html>
