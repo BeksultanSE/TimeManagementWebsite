@@ -1,3 +1,4 @@
+remove all comments
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,7 @@
 
   <link rel="stylesheet" href="assets/css/ourcss.css">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
-  <link rel="stylesheet" href="assets/css/templatemo-574-mexant.css">
+  <link rel="stylesheet" href="assets/css/template.css">
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
@@ -182,23 +183,17 @@
         left: 20px;
         /* Align it with the left */
         z-index: 1001;
-        /* Ensure logo stays above the sidebar */
       }
 
-      /* Ensure sidebar appears over content */
       .nav.active {
         display: flex;
         position: fixed;
-        /* Make the sidebar fixed */
         top: 60px;
-        /* Adjust for the height of the fixed header */
         right: 0;
         width: 250px;
-        /* Sidebar width */
         height: 100%;
         background-color: #333;
         z-index: 999;
-        /* Make sure sidebar is beneath the logo */
       }
 
       .nav.active li {
@@ -241,7 +236,6 @@
       background-size: cover;
     }
 
-    /* ---- FORM ---- */
     #todo-form {
       padding: 32px 32px 0;
       display: flex;
@@ -279,7 +273,6 @@
       cursor: pointer;
     }
 
-    /* ---- BOARD ---- */
     .lanes {
       display: flex;
       align-items: top;
@@ -337,43 +330,36 @@
     }
 
 
-    /* Other sections as previously defined... */
   </style>
 </head>
 
 <body>
 
 
-  <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
       <div class="row">
         <div class="col-12">
           <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo">
               <img src="assets/images/icons8-time-management-100.png" alt="time management logo">
 
             </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
+    
             <ul class="nav">
               <li><a href="index.html">Home</a></li>
               <li><a href="kanban.html" class="active">Kanban Planner</a></li>
               <li><a href="pomodoro.html">Pomodoro Timer</a></li>
-              <li><a href="contact-us.html">Contact Us</a></li>
-              <li><a href="contact-us.html">Contact Support</a></li>
+              <li><a href="quiz.html">Quiz</a></li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
             </a>
-            <!-- ***** Menu End ***** -->
           </nav>
         </div>
       </div>
     </div>
   </header>
-  <!-- ***** Header Area End ***** -->
 
   <div class="page-heading">
     <div class="container">
@@ -388,7 +374,6 @@
     </div>
   </div>
 
-  <!-- ***** Main Banner Area End ***** -->
 
 
     <div class="board">
@@ -429,7 +414,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>This webpage.
+          <p>Copyright © 2024 Co., Ltd. All Rights Reserved.
 
             <br>Designed by <a title="CSS Templates" rel="sponsored" 
               target="_blank">Aman and Beks</a>
@@ -439,9 +424,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
+
 
   <script src="assets/js/isotope.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
@@ -455,7 +438,7 @@
       const navbar = document.querySelector('.header-area');
       const logo = document.querySelector('.main-nav .logo img');
 
-      if (window.scrollY > 50) {  // Adjust this value as per your design
+      if (window.scrollY > 50) {  
         navbar.classList.add('scrolled');
 
       } else {
